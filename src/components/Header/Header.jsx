@@ -19,7 +19,7 @@ const Header = () => {
     return (
         <div className='header' style={{ display: location.pathname === '/auth' ? 'none' : 'block' }}>
             <div className='header__inner'>
-                <img src={logo} alt="logo" className='logo' />
+                <img src={logo} alt="logo" className='logo' onClick={() => navigate('/')}/>
                 <nav className='nav__block'>
                     <div className={location.pathname === '/kanban' ? 'active' : 'nav__block-items'}>
                         <span onClick={() => navigate('/kanban')}>Канбан доска</span>
