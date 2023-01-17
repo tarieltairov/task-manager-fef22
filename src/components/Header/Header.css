@@ -1,0 +1,122 @@
+.header {
+    width: 100%;
+    height: 61px;
+    padding: 0px 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FBFDFF;
+    box-shadow: 4px 4px 10px 1px rgba(170, 179, 255, 0.25);
+    border-radius: 0px 0px 20px 20px;
+    position: absolute;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+
+.header__inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__block {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__block-items,
+.last__block {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.nav__block-items>img {
+    width: 15px;
+    height: 15px;
+}
+
+.nav__block-items>span {
+    color: #000343;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 152%;
+    margin-right: 8px;
+    font-style: normal;
+    cursor: pointer;
+}
+
+.nav__block-items>span:hover {
+    color: #1e2491;
+    transition: 0.3s;
+}
+
+
+.logo {
+    width: 110px;
+    height: 38px;
+    margin-right: 50px;
+}
+
+.active>span {
+    color: #4891FF;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 152%;
+    margin-right: 8px;
+    font-style: normal;
+    cursor: pointer;
+}
+
+.active {
+    border-bottom: 5px solid #4891FF;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.search__block {
+    width: 284px;
+    height: 33px;
+    background: #EBF3FF;
+    box-shadow: inset 3px 3px 4px rgba(72, 145, 255, 0.15);
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    margin-right: 23px;
+}
+
+.search__block>input {
+    width: 85%;
+    height: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    padding-left: 15px;
+}
+
+.last__block {
+    display: flex;
+    align-items: center;
+}
+
+.last__block>span {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 152%;
+    color: #000343;
+    margin-right: 15px;
+}
+
+.last__block > img{
+    cursor: pointer;
+}

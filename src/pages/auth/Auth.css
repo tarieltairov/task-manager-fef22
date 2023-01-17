@@ -1,0 +1,39 @@
+.auth__container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(137.61deg, rgba(31, 84, 251, 0.142) 5.55%, rgba(246, 250, 255, 0.106) 29.09%, rgba(72, 145, 255, 0) 93.14%), #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 61px;
+}
+
+.left__block {
+    margin-right: 100px;
+}
+
+.auth__logo {
+    width: 132px;
+    height: 79px;
+    margin-bottom: 34px;
+}
+
+h1 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 65px;
+    line-height: 79px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #4891FF;
+}
