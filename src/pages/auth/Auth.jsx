@@ -13,7 +13,7 @@ const Auth = () => {
 
             <div className='left__block'>
                 <img src={logo} alt="logo" className='auth__logo'/>
-                <h1>Task Manager</h1>
+                <h1 className='auth_head'>Task Manager</h1>
                 <p>Эффективное управление любыми проектами для вашей компании</p>
             </div>
 

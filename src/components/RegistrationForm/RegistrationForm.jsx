@@ -4,7 +4,7 @@ import './Registration.css';
 const RegistrationForm = ({setIsAuth}) => {
     return (
         <div className='registration'>
-            <h3>Регистрация</h3>
+            <h3 className='reg_head'>Регистрация</h3>
 
             <input type="text" placeholder='Имя'/>
             <input type="text" placeholder='Почта'/>

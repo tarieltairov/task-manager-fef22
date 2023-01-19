@@ -13,7 +13,9 @@ const Task = () => {
 
             <p>Короткое описание задачи</p>
             
-            <p>field</p>
+            <div className={cl.field}>
+                field
+            </div>
 
             <div className={cl.btns_block}>
                 <button className={cl.decline_btn}>отклонить</button>
