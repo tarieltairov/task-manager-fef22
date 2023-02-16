@@ -5,16 +5,13 @@ import deals from '../../assets/icons/deals.png';
 import employees from '../../assets/icons/employees.png';
 import searchIcon from '../../assets/icons/search.png';
 import logoutIcon from '../../assets/icons/logout.png';
-import './Header.css';
 import { useLocation, useNavigate } from 'react-router-dom';
+import './Header.css';
 
 const Header = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
-
-    console.log('location', location);
-
 
     return (
         <div className='header' style={{ display: location.pathname === '/auth' ? 'none' : 'block' }}>

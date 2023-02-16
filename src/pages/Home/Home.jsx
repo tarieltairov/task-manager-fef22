@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import cl from './Home.module.scss';
-import sortIconActive from '../../assets/icons/sorting.png';
 import sortIcon from '../../assets/icons/sorting1.png';
 import square from '../../assets/icons/square.png';
 import inline from '../../assets/icons/inline.png';
@@ -10,7 +9,6 @@ import Task from '../../components/Task/Task';
 
 const Home = () => {
     const [view, setView] = useState('inline');
-
     return (
         <div className={cl.homePage}>
             <div className={cl.first__blok}>

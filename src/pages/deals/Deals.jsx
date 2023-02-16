@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import cl from './Deals.module.scss';
 
 const Deals = () => {
