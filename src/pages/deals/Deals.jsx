@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { exampleContext } from '../../context';
 import cl from './Deals.module.scss';
 
 const Deals = () => {
+    const contex = useContext(exampleContext);
+    
     return (
         <div className={cl.deals_page}>
-            deals
+            {contex.count}
         </div>
     );
 };

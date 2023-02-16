@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import cl from './Home.module.scss';
 import sortIcon from '../../assets/icons/sorting1.png';
 import square from '../../assets/icons/square.png';
@@ -6,15 +6,19 @@ import inline from '../../assets/icons/inline.png';
 import inline1 from '../../assets/icons/inline1.png';
 import square1 from '../../assets/icons/square1.png';
 import Task from '../../components/Task/Task';
+import { exampleContext } from '../../context';
 
 const Home = () => {
     const [view, setView] = useState('inline');
+
+    const store = useContext(exampleContext);
+
     return (
         <div className={cl.homePage}>
             <div className={cl.first__blok}>
                 <h1>Доска задач</h1>
                 <span className={cl.task_count}>6</span>
-                
+
                 <div className={cl.sort_block}>
                     <select name="" id="" placeholder='Сортировка' defaultValue={'Сортировка'}>
                         <option value="first">От А-Я</option>
@@ -25,16 +29,22 @@ const Home = () => {
                     <img src={sortIcon} alt="sortIcon" />
                 </div>
 
+                <div>
+                {/* для примера работы context */}
+                    {store.count}
+                    <button onClick={() => store.add(2)}>+</button>
+                    <button onClick={() => store.remove(1)}>-</button>
+                </div>
 
                 <div className={cl.view_block}>
                     <div className={cl.view_block_title}>
                         <span>Вид:</span>
                     </div>
-                    <div className={view==="square" ? cl.active : cl.square_block} onClick={()=>setView("square")}>
-                        <img src={view==="square" ?inline1: inline} alt="square" />
+                    <div className={view === "square" ? cl.active : cl.square_block} onClick={() => setView("square")}>
+                        <img src={view === "square" ? inline1 : inline} alt="square" />
                     </div>
-                    <div className={view==="inline" ? cl.active : cl.square_block} onClick={()=>setView("inline")}>
-                        <img  src={view==="square" ? square1 : square} alt="inline" />
+                    <div className={view === "inline" ? cl.active : cl.square_block} onClick={() => setView("inline")}>
+                        <img src={view === "square" ? square1 : square} alt="inline" />
                     </div>
                 </div>
 
