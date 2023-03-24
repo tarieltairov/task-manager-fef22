@@ -7,21 +7,20 @@ import './Auth.css';
 
 const Auth = () => {
     const [isAuth, setIsAuth] = useState(false);
-    
     return (
         <div className='auth__container'>
 
             <div className='left__block'>
-                <img src={logo} alt="logo" className='auth__logo'/>
+                <img src={logo} alt="logo" className='auth__logo' />
                 <h1 className='auth_head'>Task Manager</h1>
                 <p>Эффективное управление любыми проектами для вашей компании</p>
             </div>
 
             <div className='right__block'>
                 {isAuth ?
-                    <LoginForm setIsAuth={setIsAuth}/>
+                    <LoginForm setIsAuth={setIsAuth} />
                     :
-                    <RegistrationForm setIsAuth={setIsAuth}/>
+                    <RegistrationForm setIsAuth={setIsAuth} />
                 }
             </div>
         </div>

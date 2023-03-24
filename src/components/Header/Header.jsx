@@ -9,14 +9,12 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
-
     const navigate = useNavigate();
     const location = useLocation();
-
     return (
         <div className='header' style={{ display: location.pathname === '/auth' ? 'none' : 'block' }}>
             <div className='header__inner'>
-                <img src={logo} alt="logo" className='logo' onClick={() => navigate('/')}/>
+                <img src={logo} alt="logo" className='logo' onClick={() => navigate('/')} />
                 <nav className='nav__block'>
                     <div className={location.pathname === '/kanban' ? 'active' : 'nav__block-items'}>
                         <span onClick={() => navigate('/kanban')}>Канбан доска</span>
@@ -31,12 +29,10 @@ const Header = () => {
                         <img src={employees} alt="third__icon" />
                     </div>
                 </nav>
-
                 <div className='search__block'>
                     <input type="text" />
                     <img src={searchIcon} alt="search__icon" />
                 </div>
-
                 <div className='last__block'>
                     <span>user-name</span>
                     <img src={logoutIcon} alt="logout-icon" onClick={() => navigate('/auth')} />

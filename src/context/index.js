@@ -1,28 +1,26 @@
 import { createContext, useState } from "react";
 
-export const exampleContext = createContext(null);
+export const exampleContext = createContext();
 
 const ExampleContextProvider = ({ children }) => {
   const [count, setCount] = useState(0);
 
-  const addNumber = (number = 1) => {
-    setCount((prev) => prev + number);
+  const add = () => {
+    setCount((prev) => prev + 1);
   };
 
-  const removeNumber = (number = 1)=>{
-    setCount((prev)=>prev-number)
+  const remove = () => {
+    setCount((prev) => prev - 1);
   };
 
-  const values = {
+  let values = {
     count,
-    add: addNumber,
-    remove: removeNumber
+    addCounter: add,
+    remove,
   };
 
   return (
-    <exampleContext.Provider value={values}>
-      {children}
-    </exampleContext.Provider>
+    <exampleContext.Provider value={values}>{children}</exampleContext.Provider>
   );
 };
 

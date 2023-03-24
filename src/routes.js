@@ -18,6 +18,7 @@ const Routing = () => {
         <Route path="/kanban" element={<Kanban />} />
         <Route path="/deals" element={<Deals />} />
         <Route path="*" element={<span>такой страницы нет - 404</span>} />
+        <Route path="/auth" element={<Auth />} />
       </Routes>
     </BrowserRouter>
   );

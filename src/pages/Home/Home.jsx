@@ -10,11 +10,19 @@ import { exampleContext } from '../../context';
 
 const Home = () => {
     const [view, setView] = useState('inline');
-
     const store = useContext(exampleContext);
 
     return (
         <div className={cl.homePage}>
+
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                {/* для примера работы c context */}
+                <button onClick={() => store.addCounter(2)}>+</button>
+                <h5>{store.count}</h5>
+                <button onClick={() => store.remove(1)}>-</button>
+            </div>
+            <hr />
+
             <div className={cl.first__blok}>
                 <h1>Доска задач</h1>
                 <span className={cl.task_count}>6</span>
@@ -27,13 +35,6 @@ const Home = () => {
                         <option value="default">По умолчанию</option>
                     </select>
                     <img src={sortIcon} alt="sortIcon" />
-                </div>
-
-                <div>
-                {/* для примера работы context */}
-                    {store.count}
-                    <button onClick={() => store.add(2)}>+</button>
-                    <button onClick={() => store.remove(1)}>-</button>
                 </div>
 
                 <div className={cl.view_block}>
@@ -49,8 +50,6 @@ const Home = () => {
                 </div>
 
             </div>
-
-
 
             <div className={cl.second__block}>
                 <Task />

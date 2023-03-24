@@ -4,7 +4,6 @@ import cl from './Deals.module.scss';
 
 const Deals = () => {
     const contex = useContext(exampleContext);
-    
     return (
         <div className={cl.deals_page}>
             {contex.count}
