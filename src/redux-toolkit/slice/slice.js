@@ -1,15 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getUsers } from "../actions/action";
+import { getPosts, postPost } from "../actions/action";
 
 const initialState = {
-  users: [],
+  posts: null,
   count: 0,
   loading: false,
   error: false,
 };
 
-const userSlice = createSlice({
-  name: "userSlice",
+const postsSlice = createSlice({
+  name: "postsSlice",
   initialState,
   reducers: {
     minus: (state) => {
@@ -20,20 +20,33 @@ const userSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(getUsers.pending, (state) => {
+    builder.addCase(getPosts.pending, (state) => {
       state.loading = true;
     });
-    builder.addCase(getUsers.rejected, (state, action) => {
+    builder.addCase(getPosts.rejected, (state, action) => {
       state.loading = false;
       state.error = action.payload;
     });
-    builder.addCase(getUsers.fulfilled, (state, action) => {
+    builder.addCase(getPosts.fulfilled, (state, action) => {
       state.loading = false;
       state.error = false;
-      state.users = [action.payload];
+      state.posts = action.payload;
+    });
+
+    builder.addCase(postPost.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(postPost.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    });
+    builder.addCase(postPost.fulfilled, (state, action) => {
+      state.loading = false;
+      state.error = false;
+      state.posts.unshift(action.payload);
     });
   },
 });
 
-export const { minus, plus } = userSlice.actions;
-export default userSlice.reducer;
+export const { minus, plus } = postsSlice.actions;
+export default postsSlice.reducer;

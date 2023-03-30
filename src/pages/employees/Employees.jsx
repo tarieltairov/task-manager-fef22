@@ -1,26 +1,33 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllTodos } from '../../redux/actions/todosAction';
+import { postPost } from '../../redux-toolkit/actions/action';
 import './Employees.css';
 
 const Employees = () => {
     const dispatch = useDispatch();
+    const [title, setTitle] = useState('');
+    const { posts, loading } = useSelector((state) => state.usersToolkit);
 
-    const { users } = useSelector((state) => state.todos);
+    console.log('before', posts)
 
-    useEffect(() => {
-        dispatch(getAllTodos());
-    }, [dispatch]);
+    const sendPost = () => {
+        let post = {
+            body: 'dawdawdwd',
+            title,
+            userId: 1
+        };
+        dispatch(postPost(post))
+    };
 
     return (
         <div className='employees' style={{ padding: '100px' }}>
-            <h1>Cотрудники</h1>
-            {/* отображаем данные - users, полученные со store (redux) */}
-            <ol>
-                {users?.map((item) => (
-                    <li key={item.id}>{item?.name}</li>
-                ))}
-            </ol>
+            <h1>отправка задачи</h1>
+            <input type="text" onChange={(e) => setTitle(e.target.value)} />
+            <button onClick={() => sendPost()}>send</button>
+            {loading && <span>loading...</span>}
+            {posts?.map((item, index) => (
+                <p key={index}>{item.title}</p>
+            ))}
         </div>
     );
 };
